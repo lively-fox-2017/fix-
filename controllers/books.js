@@ -11,7 +11,13 @@ module.exports = {
   },
   create: function(req, res) {
     // var book = new Book(req.body);
-    book.save(function (err, result) {
+    Book.create({
+      isbn:req.body.isbn,
+      title:req.body.title,
+      author:req.body.author,
+      category:req.body.category,
+      stock:req.body.stock
+    },function (err, result) {
       if (err) {
         res.send({err: err})
       }
