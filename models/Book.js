@@ -1,6 +1,4 @@
 var mongoose = require('mongoose');
-// const url = "mongodb://admin:admin@localhost:3000/livedebug"
-// mongoose.connection.openUri(url)
 
 var bookSchema = new mongoose.Schema({
   isbn: String,
