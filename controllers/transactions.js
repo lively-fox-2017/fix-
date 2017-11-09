@@ -33,7 +33,8 @@ module.exports = {
       if (err) {
         res.send({err: err})
       }
-      res.send(result)
-    }
-  });
+        res.send(result)
+      }
+    );
+  },
 }
