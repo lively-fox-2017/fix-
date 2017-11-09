@@ -1,3 +1,5 @@
+let Book = require('../models/Book.js')
+
 module.exports = {
   all: function(req, res) {
     Book.find(function (err, books) {
