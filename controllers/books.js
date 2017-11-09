@@ -23,9 +23,14 @@ module.exports = {
     });
   },
   update: function(req, res) {
-    console.log(req.params.id)
     Book.update({ _id: req.params.id }, {
-      $set: req.body
+      $set: {
+        isbn: req.body.isbn,
+        title: req.body.title,
+        author: req.body.author,
+        category: req.body.category,
+        stock: req.body.stock          
+      }
     }, function(err, result) {
       if (err) {
         res.send({err: err})
