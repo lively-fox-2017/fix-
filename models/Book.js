@@ -1,5 +1,6 @@
-var mongoose = require('mongoose');
-
+var mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/api-crud-mongoose')
+var Schema = mongoose.Schema, ObjectId = mongoose.ObjectId
 var bookSchema = mongoose.Schema({
   isbn: String,
   title: String,
@@ -7,7 +8,6 @@ var bookSchema = mongoose.Schema({
   category: Number,
   stock: Number
 });
-
-var Book = mongoose.model('Book', booksSchema);
+var Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book
