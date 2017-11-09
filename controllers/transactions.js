@@ -12,7 +12,7 @@ module.exports = {
   create: function(req, res) {
     // var transaction = new Transaction(req.body);
 
-    transaction.save({
+    Transaction.create({
       memberid: req.body.memberid,
       days: req.body.days,
       price: req.body.price,
@@ -23,7 +23,7 @@ module.exports = {
       } else {
         res.send(result)
       }
-      res.send(result)
+      // res.send(result)
     });
   },
   update: function(req, res) {
