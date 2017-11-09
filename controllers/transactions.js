@@ -1,3 +1,5 @@
+const Transaction = require('../models/Transaction')
+
 module.exports = {
   all: function(req, res) {
     Transaction.find(function (err, transactions) {
@@ -15,7 +17,6 @@ module.exports = {
       } else {
         res.send(result)
       }
-      res.send(result)
     });
   },
   update: function(req, res) {
