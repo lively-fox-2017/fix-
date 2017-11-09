@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var bookSchema = mongoose.Schema({
+var bookSchema = new mongoose.Schema({
   isbn: String,
   title: String,
   author: String,
@@ -8,6 +8,6 @@ var bookSchema = mongoose.Schema({
   stock: Number
 });
 
-var Book = mongoose.model('Book', booksSchema);
+var Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book
