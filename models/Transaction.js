@@ -1,6 +1,6 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
+var mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/api-crud-mongoose')
+var Schema = mongoose.Schema, ObjectId = mongoose.ObjectId
 var transactionSchema = mongoose.Schema({
   memberid: String,
   days: String,
