@@ -10,6 +10,7 @@ module.exports = {
     })
   },
   create: function(req, res) {
+    // console.log(req.body);
     var book = new Book(req.body);
     book.save(function (err, result) {
       if (err) {
@@ -19,7 +20,7 @@ module.exports = {
     });
   },
   update: function(req, res) {
-    Book.update({ _id: req.id }, {
+    Book.update({ _id: req.params.id }, {
       $set: req.body
     }, function(err, result) {
       if (err) {
