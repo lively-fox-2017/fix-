@@ -5,7 +5,7 @@ var transactionSchema = mongoose.Schema({
   memberid: String,
   days: String,
   date: { type: Date, default: Date.now },
-  price: Number,
+  price: String,
   booklist: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
 });
 
