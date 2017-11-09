@@ -20,8 +20,9 @@ module.exports = {
     },function (err, result) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(result)
       }
-      res.send(result)
     });
   },
   update: function(req, res) {
@@ -30,16 +31,18 @@ module.exports = {
     }, function(err, result) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(result)
       }
-      res.send(result)
     });
   },
   delete: function(req, res) {
     Book.remove({ _id: req.params.id }, function (err, result) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(result)
       }
-      res.send(result)
     });
   }
 }
