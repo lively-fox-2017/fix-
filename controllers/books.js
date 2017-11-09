@@ -10,13 +10,12 @@ module.exports = {
   },
   create: function(req, res) {
     var book = new Book(req.body);
-    console.log(req.body)
-    // book.save(function (err, result) {
-    //   if (err) {
-    //     res.send({err: err})
-    //   }
-    //   res.send(result)
-    // });
+    book.save(function (err, result) {
+      if (err) {
+        res.send({err: err})
+      }
+      res.send(result)
+    });
   },
   update: function(req, res) {
     Book.update({ _id: req.id }, {
