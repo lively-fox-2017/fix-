@@ -14,8 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-var books = require('routes/books');
-var transactions = require('routes/transactions');
+var books = require('./routes/books');
+var transactions = require('./routes/transactions');
 
 app.use('/books', books);
 app.use('/transactions', transactions);
