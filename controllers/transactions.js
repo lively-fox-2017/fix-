@@ -1,3 +1,5 @@
+const Transaction = require('../models/Transaction');
+
 module.exports = {
   all: function(req, res) {
     Transaction.find(function (err, transactions) {
@@ -8,6 +10,12 @@ module.exports = {
     })
   },
   create: function(req, res) {
+    const data = {
+      memberid: req.body.memberid,
+      days: req.body.days,
+      price: Number,
+      booklist: Array.isArray(req.body.booklist) ? req.body.booklist : [req.body.booklist],
+    };
     var transaction = new Transaction(req.body);
     transaction.save(function (err, result) {
       if (err) {
@@ -15,7 +23,6 @@ module.exports = {
       } else {
         res.send(result)
       }
-      res.send(result)
     });
   },
   update: function(req, res) {
