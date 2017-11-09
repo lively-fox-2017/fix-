@@ -7,7 +7,7 @@ module.exports = {
         res.send({err: err})
       }
       res.send(transactions)
-    })
+    }).populate('booklist')
   },
   create: function(req, res) {
     // console.log(req.body);
