@@ -1,3 +1,5 @@
+const Book = require('../models/Book')
+
 module.exports = {
   all: function(req, res) {
     Book.find(function (err, books) {
@@ -27,7 +29,7 @@ module.exports = {
     });
   },
   delete: function(req, res) {
-    Book.remove({ _id: req.id }, function (err, result) {
+    Book.remove({ _id: req.params.id }, function (err, result) {
       if (err) {
         res.send({err: err})
       }
